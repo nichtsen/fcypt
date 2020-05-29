@@ -3,7 +3,7 @@
 
 ## Installation
 ```
-git get github.com/nichtsen/fcypt.git
+go get github.com/nichtsen/fcypt
 cd $GOPATH/src/github.com/nichtsen/fcypt
 go build 
 ```
