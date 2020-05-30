@@ -175,7 +175,7 @@ func Decypt(cbuf, key []byte) ([]byte, error) {
 	mode := ecb.NewECBDecrypter(block)
 	buf := make([]byte, len(cbuf))
 	mode.CryptBlocks(buf, cbuf)
-	if len(cbuf) < Buffer_sz {
+	if len(cbuf) < Buffer_sz && isPad(buf) {
 		padder := padding.NewPkcs7Padding(mode.BlockSize())
 		buf, err = padder.Unpad(buf) 
 		if err != nil {
@@ -183,4 +183,17 @@ func Decypt(cbuf, key []byte) ([]byte, error) {
 		}
 	}
 	return buf, nil	
+}
+
+func isPad(buf []byte) bool {
+	pad := buf[len(buf)-1]
+	if int(pad) > Key_sz {
+		return false
+	}
+	for _, v := range buf[len(buf)-int(pad) : len(buf)-1] {
+		if v != pad {
+			return false
+		}
+	}
+	return true
 }
