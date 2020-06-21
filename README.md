@@ -16,4 +16,6 @@ go build
 
 ## language
 [python implementation](https://github.com/nichtsen/symk-fcrypto)
+[C implementation](https://github.com/nichtsen/fcrypt)
+
 
