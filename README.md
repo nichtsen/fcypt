@@ -14,6 +14,11 @@ go build
 * __.en:__ encrypted file
 * __.de:__ decrypted file that is the same as your original file after the extension being stripped
 
+## TODO
+1. clean output files if the process quits with error
+2. pad optimization: >= rather than >
+3. key file entention shall be unified with respect to C implementation 
+
 ## language
 [python implementation](https://github.com/nichtsen/symk-fcrypto)
 [C implementation](https://github.com/nichtsen/fcrypt)
