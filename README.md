@@ -16,7 +16,7 @@ go build
 
 ## TODO
 1. clean output files if the process quits with error
-2. pad optimization: >= rather than >
+2. deadly tail problem
 3. key file entention shall be unified with respect to C implementation 
 
 ## language

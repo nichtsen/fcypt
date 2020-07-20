@@ -187,7 +187,7 @@ func Decypt(cbuf, key []byte) ([]byte, error) {
 
 func isPad(buf []byte) bool {
 	pad := buf[len(buf)-1]
-	if int(pad) > Key_sz {
+	if int(pad) >= Key_sz {
 		return false
 	}
 	for _, v := range buf[len(buf)-int(pad) : len(buf)-1] {
